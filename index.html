@@ -16,6 +16,14 @@
       font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 
+    button:focus {
+      border: none;
+      outline: none;
+    }
+    
+    button:hover{
+      background-image: linear-gradient(90deg,white,  hsla(20, 89%, 66%, 0.96)) !important;
+    }
     .topo {
       width: 100%;
       min-height: 10vh;
@@ -52,17 +60,18 @@
     }
 
     .topicos > button {
+      outline: none;
       text-decoration: none;
       color: black;
       background-color: transparent;
-      border: 0px;
+      border: 0;
       font-weight: 700;
     }
 
     .topicos > button.active {
       color: black;
       padding: 0px 5px 0px 5px;
-      border-bottom: 1px solid #f58e5b;
+      border-bottom: 2px solid hsla(20, 89%, 66%, 0.8);
     }
 
     .content {

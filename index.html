@@ -3,9 +3,201 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+    crossorigin="anonymous"
+  />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <title>Lapps</title>
+  <Style>
+    * {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .topo {
+      width: 100%;
+      min-height: 10vh;
+      background-color: #f58e5b;
+      display: flex;
+      align-items: center;
+    }
+
+    .topo > h3 {
+      margin-left: 1vw;
+      margin-top: 2vh;
+      font-weight: bold;
+      font-family: cursive;
+    }
+
+    .topo > img {
+      margin-left: 2vw;
+      justify-self: center;
+    }
+
+    .conteudo {
+      width: 100%;
+      min-height: 90vh;
+      border-left: 2px solid #f57c5b;
+    }
+
+    .topicos {
+      font-weight: bold;
+      padding-top: 1vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      background-image: linear-gradient(180deg, hsla(20, 89%, 66%, 0.96), white);
+    }
+
+    .topicos > button {
+      text-decoration: none;
+      color: black;
+      background-color: transparent;
+      border: 0px;
+      font-weight: 700;
+    }
+
+    .topicos > button.active {
+      color: black;
+      padding: 0px 5px 0px 5px;
+      border-bottom: 1px solid #f58e5b;
+    }
+
+    .content {
+      display: none;
+    }
+
+    .content.visible {
+      min-height: 80vh;
+      width: 100%;
+      display: flex;
+      padding: 15px;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+  </Style>
 </head>
-<body>
-  <h1>Hello World</h1>
+<!-- =============================================================================== -->
+<body class="container-fluid p-0 m-0">
+  <div class="topo">
+    <img src="./img/bag-1.png" width="50px" height="50px"/>
+    <h3>Sacolão</h3>
+  </div>
+  <div class="conteudo">
+    <div class="topicos">
+      <button onclick="changeActive(0)" class="active" id="about">
+        Sobre o projeto
+      </button>
+      <button onclick="changeActive(1)" id="objective">
+        Objetivo
+      </button>
+      <button onclick="changeActive(2)" id="technologies">
+        Tecnologias
+      </button>  
+      <button onclick="changeActive(3)" id="develppment">
+        Desenvolvimento
+      </button>
+    </div>
+    <div class="sobre content visible" id="sobre">
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+    </div>
+    <div class="objetivo content" id="objetivo">
+      <p>
+        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+      </p>
+    </div>
+    <div class="techs content" id="techs">
+      <p>
+        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+      </p>
+    </div>
+    <div class="desenvolvimento content" id="desenvolvimento">
+      <p>
+        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+      </p>
+    </div>
+  </div>
+  <!-- =============================================================================== -->
+  <script
+    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    var changeActive=()=>{}
+    var setChangeActive = function(changeActive_){
+      changeActive = changeActive_
+    }
+
+    $(document).ready(() => {
+      const getEl = (idEl) => $(idEl)
+      var actived = 0;
+
+      const menu = [
+        "#about",
+        "#objective",
+        "#technologies",
+        "#develppment",
+      ]
+      const elements = [
+        "#sobre",
+        "#objetivo",
+        "#techs",
+        "#desenvolvimento"
+      ]
+
+      $(document).on('mousewheel', (e) => {
+        if(e.originalEvent.wheelDelta /120 > 0) {
+          setActived(-1)
+        }
+        else {
+          setActived(1)
+        }
+        changeActive(actived)
+      })
+
+      function changeActive(active) {
+        actived = active
+        console.log(active)
+        $(".visible").removeClass("visible")
+        $(".active").removeClass("active")
+        $(menu[active]).addClass("active")
+        $(elements[active]).addClass("visible")
+      }
+      setChangeActive(changeActive)
+      function setActived(value) {
+        if(value === -1) {
+          if(actived >= 1) {
+            actived+=value
+          }
+        } else {
+          if(actived <= 2){
+            actived+=value
+          }
+        }
+      }
+    })
+  </script>
+  <script>
+    AOS.init();
+  </script>
 </body>
+<!-- =============================================================================== -->
 </html>
